@@ -1,0 +1,25 @@
+{
+  "name": "backend-quiz-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aayush-Rai/backend-quiz-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aayush-Rai/backend-quiz-server/issues"
+  },
+  "homepage": "https://github.com/Aayush-Rai/backend-quiz-server#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
