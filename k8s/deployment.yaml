@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: staging-backend-quiz-app-server-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: staging-backend-quiz-app-server-pod
+  template:
+    metadata:
+      labels:
+        app: staging-backend-quiz-app-server-pod # need to be same with selector.matchLabels.app
+    spec:
+      containers:
+        - name: staging-backend-quiz-app-server-container
+          image: us-central1-docker.pkg.dev/quiz-app-staging-459008/quiz-staging/quiz-server-container:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 4100 # No need for double quotes
+          resources:
+            requests:
+              memory: "400Mi"
+              cpu: "100m"
+            limits:
+              memory: "1000Mi" # 2.5x
+              cpu: "250m" # 2.5x
+          # env:
+          # - name: PORT
+          #   value: "1400"  # Keep double quotes for ENV variables
+          # - name: NODE_ENV
+          #   value: "production"  # staging or production
